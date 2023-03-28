@@ -19,9 +19,9 @@ public class Game extends Canvas implements Runnable, KeyListener {
     //Variáveis gerais
     public static JFrame frame;
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static int WIDTH = (int) screenSize.getWidth();
-    private static int HEIGHT = (int) screenSize.getHeight();
-    public static int SCALE = 5;
+    public static final int WIDTH = (int) screenSize.getWidth();
+    public static final int HEIGHT = (int) screenSize.getHeight();
+    public static final int SCALE = 5;
     private Thread thread;
     private Boolean isRunning = true;
     private BufferedImage image;

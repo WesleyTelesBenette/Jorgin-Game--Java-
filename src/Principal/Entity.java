@@ -39,7 +39,7 @@ public class Entity {
     }
 
     public void render(Graphics g) {
-        g.drawImage(sprite, getX(), getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
+        g.drawImage(sprite, getX() - Camera.getX(), getY() - Camera.getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
     }
 
 }

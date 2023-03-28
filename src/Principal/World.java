@@ -21,8 +21,8 @@ public class World {
         WIDTH = map.getWidth();
         HEIGHT = map.getHeight();
 
-        for (int yy = 0; yy < map.getHeight(); yy++) {
-            for (int xx = 0; xx < map.getWidth(); xx++) {
+        for (int xx = 0; xx < map.getWidth(); xx++) {
+            for (int yy = 0; yy < map.getHeight(); yy++) {
                 int pixelAtual = pixels[xx + (yy * map.getWidth())];
 
                 //0xFF"Cor em hex"
@@ -62,8 +62,19 @@ public class World {
     }
 
     public void render (Graphics g) {
-        for (int yy = 0; yy < HEIGHT; yy++) {
-            for (int xx = 0; xx < WIDTH; xx++) {
+
+        int xstart = (Camera.getX() >> 3) / Game.SCALE;
+        int ystart = (Camera.getY() >> 3) / Game.SCALE;
+
+        int xfinal = xstart + ((Game.WIDTH >> 3) / Game.SCALE);
+        int yfinal = ystart + ((Game.HEIGHT >> 3) / Game.SCALE);
+
+        for (int xx = xstart; xx <= xfinal; xx++) {
+            for (int yy = ystart; yy <= yfinal; yy++) {
+                if ((xx < 0) || (yy < 0) || (xx >= WIDTH) || (yy >= HEIGHT)) {
+                    continue;
+                }
+                
                 Tile tile = tiles[xx + (yy * WIDTH)];
                 if (tile != null) tile.render(g);
             }

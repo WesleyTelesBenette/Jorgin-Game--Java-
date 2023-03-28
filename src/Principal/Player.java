@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Player extends Entity {
 
     public int W = 0, A = 0, S = 0, D = 0, movX = 0, movY = 0;
-    private double vel = 3;
+    private double vel = 3.5;
     private static BufferedImage[] sprites;
     private static int frame;
     private static int dir;
@@ -44,6 +44,10 @@ public class Player extends Entity {
         } else {
             frame = 0;
         }
+
+        Camera.setX((int) x - (Game.WIDTH/2)); 
+        Camera.setY((int) y - (Game.HEIGHT/2) );
+
     }
     
     //Gráficos
@@ -53,9 +57,9 @@ public class Player extends Entity {
                 frame = 0;
             }
             dir = movX;
-            g.drawImage(sprites[(int)frame/10+(5*(((movX*(-1))+1)/2))], getX(), getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
+            g.drawImage(sprites[(int)frame/10+(5*(((movX*(-1))+1)/2))], getX() - Camera.getX(), getY() - Camera.getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
         } else {
-            g.drawImage(sprites[1+(5*(((dir*(-1))+1)/2))], getX(), getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
+            g.drawImage(sprites[1+(5*(((dir*(-1))+1)/2))], getX() - Camera.getX(), getY() - Camera.getY(), getWidth()*Game.SCALE, getHeight()*Game.SCALE, null);
         }
     }
 }

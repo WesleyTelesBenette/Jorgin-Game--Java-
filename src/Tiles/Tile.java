@@ -4,6 +4,8 @@ package Tiles;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import Principal.Camera;
+
 public class Tile {
 
     private BufferedImage sprite;
@@ -17,6 +19,6 @@ public class Tile {
     }
 
     public void render(Graphics g) {
-        g.drawImage(sprite, x*9*SCALE, y*9*SCALE, 9*SCALE, 9*SCALE, null);
+        g.drawImage(sprite, x*9*SCALE - Camera.getX(), y*9*SCALE - Camera.getY(), 9*SCALE, 9*SCALE, null);
     }
 }
