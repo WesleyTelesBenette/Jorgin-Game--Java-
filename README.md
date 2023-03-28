@@ -9,3 +9,5 @@ Um jogo em Java que eu planejo terminar, e assim aprender completamente tudo que
 
 ## Versão 1.2 (Futura)
 - Correção da câmera.
+- Colisão.
+- Gravidade e pulo.
