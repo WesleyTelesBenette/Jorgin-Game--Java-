@@ -4,10 +4,10 @@ Um jogo em Java que eu planejo terminar, e assim aprender completamente tudo que
 ### Versão 1.0
 - Gráficos jogador e classes básicas.
 
-### Versão 1.1 (atual)
+### Versão 1.1
 - Câmera.
 
-## Versão 1.2 (Futura)
+## Versão 1.2
 - Correção da câmera.
-- Colisão.
-- Gravidade e pulo.
+- Erros grotestos com as colisões.
+- Abandono do projeto...
