@@ -8,7 +8,7 @@ Depois de passar por esse processo, me vejo em um patamar diferente...
 ### Versão 1.1
 - Câmera.
 
-## Versão 1.2
+### Versão 1.2
 - Correção da câmera.
 - Erros grotestos com as colisões.
 - Abandono do projeto...
